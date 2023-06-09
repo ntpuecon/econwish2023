@@ -45,7 +45,7 @@ export default function App() {
         <AppContent users={convertUsersToArrayOfObject([...data])} /> :
         <div style={{color: "black"}}>Loading...</div>
 
-    console.log("https://tpemartin.github.io"+appLogo)
+    // console.log("https://tpemartin.github.io"+appLogo)
     return (
 
         <div className="App">
@@ -57,8 +57,8 @@ export default function App() {
             <Helmet>
                 <meta property='og:image' content={
                     
-                    `https://tpemartin.github.io${appLogo}`} />    
-                <meta property="og:url" content="https://tpemartin.github.io/econWish/"/>
+                    `https://ntpuecon.github.io${appLogo}`} />    
+                <meta property="og:url" content="https://ntpuecon.github.io/econwish2023/"/>
             </Helmet>    
         </div>
 
