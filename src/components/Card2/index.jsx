@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import "./index.css"
 import "./wish.css"
-import PostedStamp, {sealVariants, sealLocations} from "../PostedStamp"
+import PostedStamp, { sealVariants, sealLocations } from "../PostedStamp"
 import Stack from '@mui/material/Stack';
 import { Box, Button, Container } from '@mui/material';
 import Image from "mui-image"
@@ -34,9 +34,9 @@ export default function Card2({ user }) {
   }, [])
 
   var cardContent = showFront ?
-    <ContentPostalFront imgSrc={imgSrc} sealVariant={sealVariant} 
+    <ContentPostalFront imgSrc={imgSrc} sealVariant={sealVariant}
       sealLocation={sealLocation}
-    name={name} grade={grade} wish={wish} onClick={handleClipWish} /> :
+      name={name} grade={grade} wish={wish} onClick={handleClipWish} /> :
     <ContentPostalBack imgSrc={imgSrc} wish={wish} onClick={handleCloseBackContent} />
 
 
@@ -109,6 +109,7 @@ function ContentPostalFront({ imgSrc, sealVariant, sealLocation, name, grade, wi
 }
 function ContentPostalBack({ imgSrc, wish, onClick }) {
 
+  
   const [showPic, setShowPic] = useState(false)
 
   function handleToggle() {
@@ -122,16 +123,43 @@ function ContentPostalBack({ imgSrc, wish, onClick }) {
   var op = showPic ? 1 : 0.3
   var vs = showPic ? "hidden" : "visible"
 
+  const [localSrc, setLocalSrc] = useState(imgSrc)
+
+  const imgSrc2 = imgSrc.replace("\.png","s700.png")
+  
+  useEffect(() => {
+    axios.get(imgSrc2, { responseType: 'blob' })
+      .then(response => {
+        // console.log(response)
+        const imageSrc = URL.createObjectURL(response.data)
+        setLocalSrc(imageSrc)
+        // console.log(imageSrc)
+      })
+      .finally(() => {
+        console.log("keep old")
+     })
+  }, [imgSrc])
+      
+
   return (
 
     <div style={{ height: "100%", position: "relative" }}>
 
-      <Image
+      {/* <Image
         duration={0}
         src={imgSrc}
         fit="cover"
         style={{ opacity: op }}
-      />
+      /> */}
+      {
+        localSrc ?
+          <Image
+            fit="cover"
+            style={{ opacity: op }}
+            duration={0}
+            src={localSrc} /> :
+          <Skeleton variant="rectangular" width={222} height={284} />
+      }
       <div style={{ position: "absolute", top: "0", height: "100%", visibility: vs }}>
         <Stack sx={{ height: "100%", justifyContent: "center" }}>
           <Container>
