@@ -14,8 +14,8 @@ const seals = [
         style: { margin: "auto" }
     },
     {
-        src: gate,
-        style: { margin: "0 0 10px 17px" }
+        src: heart_lake,
+        style: { margin: "0" }
     },
     // {
     //     src: b_school,
