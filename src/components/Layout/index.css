@@ -1,0 +1,248 @@
+   /* main */
+    .main {
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 0px;
+    gap: 10px;
+    
+    position: absolute;
+    /* position: fixed; */
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 97px;
+    
+    
+    
+    }
+    /* navbar */
+    .navbar {
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+    
+    position: absolute;
+    /* position: fixed; */
+    height: 97px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+    
+    
+    }
+    /* navbar-item */
+   .navbar-item {
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+
+      width: 60px;
+      height: 60px;
+
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+
+   }
+
+    /* previous */
+    .previous {
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    
+    width: 60px;
+    height: 60px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    
+    }
+    /* previous-icon */
+    .previous-icon {
+    
+    width: 40px;
+    height: 40px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    
+    }
+    /* previous-Vector2 */
+    .previous-Vector2 {
+    
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    
+    
+    }
+    /* previous-Vector1 */
+    .previous-Vector1 {
+    
+    position: absolute;
+    left: 10.42%;
+    right: 16.67%;
+    top: 25%;
+    bottom: 25%;
+    
+    background: #000000;
+    
+    
+    }
+    /* play */
+    .play {
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    
+    width: 60px;
+    height: 60px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+    
+    }
+    /* play-icon */
+    .play-icon {
+    
+    width: 40px;
+    height: 40px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    
+    }
+    /* play-Vector2 */
+    .play-Vector2 {
+    
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    
+    
+    }
+    /* play-Vector1 */
+    .play-Vector1 {
+    
+    position: absolute;
+    left: 33.33%;
+    right: 20.83%;
+    top: 20.83%;
+    bottom: 20.83%;
+    
+    background: #000000;
+    
+    
+    }
+    /* next */
+    .next {
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    
+    width: 60px;
+    height: 60px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    
+    
+    }
+    /* next-icon */
+    .next-icon {
+    
+    width: 40px;
+    height: 40px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    
+    }
+    /* next-Vector2 */
+    .next-Vector2 {
+    
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    
+    
+    }
+    /* next-Vector1 */
+    .next-Vector1 {
+    
+    position: absolute;
+    left: 16.67%;
+    right: 10.42%;
+    top: 25%;
+    bottom: 25%;
+    
+    background: #000000;
+    }

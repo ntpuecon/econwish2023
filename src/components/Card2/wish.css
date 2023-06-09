@@ -1,0 +1,93 @@
+/* wish */
+.wish {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px 0px;
+    gap: 0px;
+    /* position: absolute; */
+    width: 313px;
+    height: 73px;
+    left: 22px;
+    top: 475px;
+}
+
+/* left-quotation */
+.left-quotation {
+
+    width: 8px;
+    height: 63px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    /* or 100% */
+    text-align: center;
+
+    color: #000000;
+
+    border: 0.3px solid #FFFFFF;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* wish-text */
+.wish-text {
+    width: 100%;
+    height: 72px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    border: 0.3px solid #FFFFFF;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.wish-text > q {
+    quotes: &ldquo &rdquo;
+}
+/* right-quotation */
+.right-quotation {
+
+    width: 8px;
+    height: 63px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 0px;
+    /* or 0% */
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #000000;
+
+    border: 0.3px solid #FFFFFF;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
