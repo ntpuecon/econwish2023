@@ -159,7 +159,7 @@ function AppContent({ users }) {
             </div>
             {/* <FloatingActionButtons autocompleteOptions={autocompleteOptions}/> */}
             
-            <SpeedDailTools autocompleteOptions={autocompleteOptions}/>
+            {/* <SpeedDailTools autocompleteOptions={autocompleteOptions}/> */}
         </div>
 
     )
