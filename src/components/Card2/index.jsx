@@ -16,12 +16,13 @@ import axios from 'axios';
 export default function Card2({ user }) {
 
   const { name, grade, imgSrc, wish, id, sealVariant, sealLocation } = user
-
+  
   // console.log(user)
   const [showFront, setShowFront] = useState(true)
 
   function handleClipWish() {
     setShowFront(false)
+    console.log(sealVariant)
   }
   function handleCloseBackContent() {
     setShowFront(true)

@@ -3,7 +3,7 @@ import seals from "./seals.jsx"
 
 export default function Seal({variant, location}) {
 
-    variant = variant? (variant-1):2
+    //variant = variant || variant===0 ? (variant):2
 
     // console.log('seal variant')
     // console.log(seals)
