@@ -16,8 +16,7 @@ import ChangeCircleOutlinedIcon from '@mui/icons-material/ChangeCircleOutlined';
 import SimpleSlide from './components/SlideButton';
 import FloatingActionButtons, { FloatingActionButtonGroup } from './components/FAB';
 import SpeedDailTools from './components/SpeedDial';
-import appLogo from "./app.png"
-import { Helmet } from 'react-helmet';
+
 
 export default function App() {
 
@@ -54,12 +53,7 @@ export default function App() {
              appcontent
                 
             }
-            <Helmet>
-                <meta property='og:image' content={
-                    
-                    `https://ntpuecon.github.io${appLogo}`} />    
-                <meta property="og:url" content="https://ntpuecon.github.io/econwish2023/"/>
-            </Helmet>    
+            
         </div>
 
     )
@@ -120,14 +114,18 @@ function AppContent({ users }) {
         )
     })
    
-    // users.reverse()
-    users=[...users]
-    users.reverse()
-    //users.pop()
-    const user1 = users.pop() //[...users].pop()
+    // Keep chair card first
+    function putChairFirst(users){
+        const chairIndex = users.map(e=> e.name).findIndex(e=>e==="李叢禎")
+        users=[...users] // copy the array
+        const user1 = users.splice(chairIndex,1)[0]
+        users.reverse()
+        return [user1, ...users]
+    }
+    
     
    
-    const cards = [user1, ...users].map((e, i) => {
+    const cards = putChairFirst(users).map((e, i) => {
 
 
         return (
@@ -199,13 +197,8 @@ function ShareBar({ shareLink, title }) {
                             })
 
 
-                        // navigator.clipboard.writeText(shareLink)
-                        // alert(shareLink+"已複製連結")
                     }} />
                 </Stack>
-
-
-                {/* <Like href={appConfig.appUrl + '#' + e.id} colorScheme="dark"/> */}
 
             </Stack>
         </div>
