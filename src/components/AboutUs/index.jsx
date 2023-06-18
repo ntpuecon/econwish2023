@@ -29,18 +29,17 @@ export default function AbuotUs() {
                 National Taipei University, Taiwan.
                 </Typography>
                 <Typography variant="body1" gutterBottom sx={{margin: "auto"}} >
-                Students participated are: 賴佳蘭,
+                Students participated are: 
 Mirko Rivas,
 Andreia Magalhaes De Oliveira,
-李奕箴,
 林士傑,
-林佩頤,
-and 邱佳昇.
+邱佳昇.
+賴佳蘭,林佩頤, and 李奕箴.
                 </Typography>
                 <Typography variant="body1" gutterBottom sx={{margin: "auto"}} >
                     If there is any question regarding the app, please contact us at:<br></br>
                     <Link href="mailto:mtlin@gm.ntpu.edu.tw">mtlin@gm.ntpu.edu.tw</Link>
-                    <br></br>address for Martin Lin -- the course teacher.
+                    <br></br>address for Martin Lin -- the course instructor.
                 </Typography>
                 </Stack>
                 {/* <TitlebarBelowImageList/> */}
