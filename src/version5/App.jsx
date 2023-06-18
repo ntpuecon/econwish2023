@@ -130,7 +130,7 @@ function AppContent({ users }) {
             <GalleryItem key={i} className={e.grade}>
                 
                 <Card2 user={e} />
-                <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={'來自 '+e.name + ' - ' + e.grade+' 的祝賀'} />
+                <ShareBar shareLink={appConfig.appUrl + 'version5/#' + e.id} title={'來自 '+e.name + ' - ' + e.grade+' 的祝賀'} />
             </GalleryItem>
         )
     })
