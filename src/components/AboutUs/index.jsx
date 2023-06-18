@@ -2,7 +2,7 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { Avatar, Container, Stack, Typography } from '@mui/material';
+import { Avatar, Container, Link, Stack, Typography } from '@mui/material';
 
 export default function AbuotUs() {
 
@@ -19,15 +19,31 @@ export default function AbuotUs() {
             </div> */}
         
             <Container>
-                <Stack sx={{margin:"auto"}} pb={2}>
+                <Stack sx={{margin:"auto"}} pb={2} spacing={2}>
                 <Typography variant="h6" component="div" gutterBottom sx={{margin: "auto"}} >
-                關於我們
+                About the App
                 </Typography>
                 <Typography variant="body1" gutterBottom sx={{margin: "auto"}} >
-                也許有一天記憶會消失
+                This app is a team work from the course 
+                Economic Issues and Multimedia Publication, from Department of Economics, 
+                National Taipei University, Taiwan.
+                </Typography>
+                <Typography variant="body1" gutterBottom sx={{margin: "auto"}} >
+                Students participated are: 賴佳蘭,
+Mirko Rivas,
+Andreia Magalhaes De Oliveira,
+李奕箴,
+林士傑,
+林佩頤,
+and 邱佳昇.
+                </Typography>
+                <Typography variant="body1" gutterBottom sx={{margin: "auto"}} >
+                    If there is any question regarding the app, please contact us at:<br></br>
+                    <Link href="mailto:mtlin@gm.ntpu.edu.tw">mtlin@gm.ntpu.edu.tw</Link>
+                    <br></br>address for Martin Lin -- the course teacher.
                 </Typography>
                 </Stack>
-                <TitlebarBelowImageList/>
+                {/* <TitlebarBelowImageList/> */}
             </Container>
             
        
