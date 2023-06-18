@@ -1,27 +1,22 @@
 import * as React from 'react';
 import './App.css'
-import dataJson from "./data.json"
-import { Gallery, GalleryItem } from './components/Layout3';
-import appConfig from "./appConfig.json"
+import { Gallery, GalleryItem } from '../components/Layout3';
+import appConfig from "../appConfig.json"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Card2 from './components/Card2';
-import { EmailShareButton, FacebookIcon, FacebookShareButton, LineIcon, LineShareButton, LinkedinShareButton } from 'react-share';
-import { IconButton, Stack } from '@mui/material';
-import LinkIcon from '@mui/icons-material/Link';
-import { MailOutlineOutlined, Menu } from '@mui/icons-material';
-import SearchAppBar from './components/SearchAppBarTop';
-import AboutUs from './components/AboutUs';
+import Card2 from '../components/Finalcard';
+import SearchAppBar from '../components/SearchAppBarTop';
+import AboutUs from '../components/AboutUs';
 import ChangeCircleOutlinedIcon from '@mui/icons-material/ChangeCircleOutlined';
-import SimpleSlide from './components/SlideButton';
-import FloatingActionButtons, { FloatingActionButtonGroup } from './components/FAB';
-import SpeedDailTools from './components/SpeedDial';
-import ShareBar from './components/ShareBar';
+import SimpleSlide from '../components/SlideButton';
+import FloatingActionButtons, { FloatingActionButtonGroup } from '../components/FAB';
+import SpeedDailTools from '../components/SpeedDial';
+import appLogo from "../app.png"
+import ShareBar from '../components/ShareBar';
 
+export default function App2() {
 
-export default function App() {
-
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null) // rendering code part
 
 
     useEffect(() => {
@@ -36,8 +31,14 @@ export default function App() {
                 }
             })
 
-    }, [appConfig])
-
+    }, [])
+    // axios.get(appConfig.entryUrl)
+    // .then((response) => {
+    //     console.log(response)
+    //     if (response.status === 200) {
+    //         setData(response.data)
+    //     }
+    // })
     // data null means false
     // data is a state variable. this makes appcontent a state-dependent 
     // component
@@ -45,7 +46,7 @@ export default function App() {
         <AppContent users={convertUsersToArrayOfObject([...data])} /> :
         <div style={{color: "black"}}>Loading...</div>
 
-    // console.log("https://tpemartin.github.io"+appLogo)
+    
     return (
 
         <div className="App">
@@ -54,7 +55,7 @@ export default function App() {
              appcontent
                 
             }
-            
+         
         </div>
 
     )
@@ -115,18 +116,14 @@ function AppContent({ users }) {
         )
     })
    
-    // Keep chair card first
-    function putChairFirst(users){
-        const chairIndex = users.map(e=> e.name).findIndex(e=>e==="李叢禎")
-        users=[...users] // copy the array
-        const user1 = users.splice(chairIndex,1)[0]
-        users.reverse()
-        return [user1, ...users]
-    }
-    
+    // users.reverse()
+    users=[...users]
+    users.reverse()
+    //users.pop()
+    const user1 = users.pop() //[...users].pop()
     
    
-    const cards = putChairFirst(users).map((e, i) => {
+    const cards = [user1, ...users].map((e, i) => {
 
 
         return (
@@ -158,7 +155,7 @@ function AppContent({ users }) {
             </div>
             {/* <FloatingActionButtons autocompleteOptions={autocompleteOptions}/> */}
             
-            {/* <SpeedDailTools autocompleteOptions={autocompleteOptions}/> */}
+            <SpeedDailTools autocompleteOptions={autocompleteOptions}/>
         </div>
 
     )
