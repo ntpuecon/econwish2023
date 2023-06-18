@@ -32,29 +32,23 @@ export function AboutUsModal({ fab }) {
 
     const button = fab ? (<Stack sx={{ justifyContent: "center" }} mr={3}>
 
-        <IconButton
-
+        
+            <InfoOutlinedIcon 
             onClick={handleOpen}
-            size="small"
-            edge="start"
-            color="#091e32"
             aria-label="open drawer"
-        >
-            <InfoOutlinedIcon />
-        </IconButton>
+            sx={{ color: "white" }} />
 
         <Typography>
             設計團隊
         </Typography>
 
     </Stack>) : (
-        <Fab
-            size="small"
-            onClick={handleOpen}
-            color="#091e32" aria-label="edit">
+        
 
-            <InfoOutlinedIcon />
-        </Fab>
+            <InfoOutlinedIcon onClick={handleOpen}
+            aria-label="open drawer"
+            sx={{ color: "white", position: "absolute", right: "16px", top: "18px" }}  />
+       
     )
     return (
         <>

@@ -16,7 +16,9 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         version2: resolve(root,'version2/index.html'),
-        version3: resolve(root,'version3/index.html')
+        version3: resolve(root,'version3/index.html'),
+        version4: resolve(root,'version4/index.html'),
+        version5: resolve(root,'version5/index.html')
       }
     }
   }

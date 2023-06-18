@@ -66,6 +66,8 @@ export default function SearchAppBar({ autocompleteOptions }) {
                     <SelectGrade />
                 </Search>
             </Toolbar>
+            <AboutUsModal/>
+           
         </AppBar>
 
     );
