@@ -5,7 +5,11 @@ import { Gallery, GalleryItem } from './components/Layout3';
 import appConfig from "./appConfig.json"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Card2 from './components/Card2';
+import CardMain from './components/Card2';
+import Card3 from "./components/Card4"
+import Card2 from "./components/Finalcard"
+import Card4 from "./components/CardAndreia"
+import Card5 from "./components/CardMirko"
 import { EmailShareButton, FacebookIcon, FacebookShareButton, LineIcon, LineShareButton, LinkedinShareButton } from 'react-share';
 import { IconButton, Stack } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
@@ -22,8 +26,25 @@ import ShareBar from './components/ShareBar';
 export default function App() {
 
     const [data, setData] = useState(null)
-
-
+    const [version, setVersion] = useState(1)
+    var CardChosen;
+    switch(version){
+        case 1:
+            CardChosen = CardMain
+            break;
+        case 2:
+            CardChosen = Card2
+            break;
+        case 3:
+            CardChosen = Card3
+            break;
+        case 4:
+            CardChosen = Card4
+            break;
+        case 5:
+            CardChosen = Card5
+            break;
+    }
     useEffect(() => {
         // axios.get is an asyncronous function
         // you use .then chain with input function that takes
@@ -42,7 +63,7 @@ export default function App() {
     // data is a state variable. this makes appcontent a state-dependent 
     // component
     let appcontent = data ?
-        <AppContent users={convertUsersToArrayOfObject([...data])} /> :
+        <AppContent users={convertUsersToArrayOfObject([...data])} CardChosen={CardChosen}/> :
         <div style={{color: "black"}}>Loading...</div>
 
     // console.log("https://tpemartin.github.io"+appLogo)
@@ -101,7 +122,7 @@ function getUserPositionIndex(user0) {
     return pos
 }
 
-function AppContent({ users }) {
+function AppContent({ users, CardChosen }) {
     
     // window.users means there is a global variable named users
     
@@ -132,7 +153,7 @@ function AppContent({ users }) {
         return (
             <GalleryItem key={i} className={e.grade}>
                 
-                <Card2 user={e} />
+                <CardChosen user={e} />
                 <ShareBar shareLink={appConfig.appUrl + '#' + e.id} title={'來自 '+e.name + ' - ' + e.grade+' 的祝賀'} />
             </GalleryItem>
         )

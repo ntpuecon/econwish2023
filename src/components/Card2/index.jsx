@@ -2,8 +2,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import "./index.css"
-import "./wish.css"
+import classes from "./index.module.css"
+// import "./wish.css"
 import PostedStamp, { sealVariants, sealLocations } from "../PostedStamp"
 import Stack from '@mui/material/Stack';
 import { Box, Button, Container } from '@mui/material';
@@ -43,8 +43,8 @@ export default function Card2({ user }) {
 
 
   return (
-    <Card className='border-image' sx={{ maxWidth: 345, margin: "auto", height: 587 }}>
-      <div id={`${id}`} className='card-id'></div>
+    <Card className={classes['border-image']} sx={{ maxWidth: 345, margin: "auto", height: 587 }}>
+      <div id={`${id}`} className={classes['card-id']}></div>
       {cardContent}
     </Card>
   );
@@ -52,14 +52,14 @@ export default function Card2({ user }) {
 
 function Sender({ name, grade }) {
   return (
-    <div className="sender">
-      <div className="label text-shadow">From:</div>
-      <div className="sender-info">
-        <div className="sender-name">
-          <div className="sender-name-text text-shadow">{name}</div>
+    <div className={classes["sender"]}>
+      <div className={classes["label text-shadow"]}>From:</div>
+      <div className={classes["sender-info"]}>
+        <div className={classes["sender-name"]}>
+          <div className={classes["sender-name-text text-shadow"]}>{name}</div>
         </div>
-        <div className="sender-grade">
-          <div className="sender-grade-text text-shadow">{grade}</div>
+        <div className={classes["sender-grade"]}>
+          <div className={classes["sender-grade-text text-shadow"]}>{grade}</div>
         </div>
       </div>
     </div>
@@ -70,8 +70,8 @@ function Sender({ name, grade }) {
 function Wish({ wish }) {
   return (
 
-    <div className="wish">
-      <div className="wish-text">
+    <div className={classes["wish"]}>
+      <div className={classes["wish-text"]}>
         <Button color='secondary'>
           <q>
             <Typography>{wish}</Typography>
